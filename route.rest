@@ -1,0 +1,44 @@
+GET http://localhost:3000/list
+
+###
+
+GET http://localhost:3000/list/62e2025efff4b59c0a16a920
+###
+
+POST http://localhost:3000/list
+Content-Type:application/json
+
+{
+    "movieName":"Beast",
+    "rating":4,
+    "cast":["Vijay","Pooja Hegde"],
+    "genre":"action"
+
+}
+
+###
+
+GET http://localhost:4000/posts 
+
+
+###
+POST http://localhost:4000/login
+Content-Type:application/json
+
+{
+    "username":"admin"
+
+}
+
+
+###
+
+DELETE http://localhost:3000/list/62e20179496a30e57fb68c91
+
+###
+PATCH http://localhost:3000/list/62e2780d28eb99109b01bbb0
+Content-Type: application/json
+
+{
+    "cast":["Sam Worthington","Stephen Lang","Sigourney Weaver"]
+}
