@@ -5,7 +5,7 @@ app.use(express.json())
 
 
 const list = require('./routes/list')
-app.use('/list',list)
+app.use('/movielist',list)
 
 
 app.listen(4000,() => console.log(`Server Started at 4000`))
