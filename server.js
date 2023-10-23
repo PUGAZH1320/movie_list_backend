@@ -1,17 +1,11 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose')
 app.use(express.json())
-
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true})
-const db = mongoose.connection
-db.on('error',(error) => console.error(error))
-db.once('open', () => console.log('Connected to Database'))
 
 
 const list = require('./routes/list')
 app.use('/list',list)
 
 
-app.listen(3000,() => console.log('Server Started'))
+app.listen(4000,() => console.log(`Server Started at 4000`))
