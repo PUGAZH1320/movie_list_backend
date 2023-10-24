@@ -18,14 +18,15 @@ router.get("/:id", getMovie, (req, res) => {
 });
 
 router.post("/new", async (req, res) => {
-  const { movieName, rating, cast, genre, releaseDate } = req.body;
+  const { movieName, rating, cast, genre, createdBy, releaseDate } = req.body;
   try {
     const newMovie = await prisma.movie.create({
       data: {
         movieName,
         rating,
-        cast: cast.split(","),
+        cast: cast,
         genre,
+        createdBy,
         releaseDate,
       },
     });
